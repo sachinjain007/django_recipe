@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+            <div class="panel-group">
+
+                       {% if queryset %}
+        {% for insatnce in queryset %}
+            <div class="panel  panel-primary class">
+                    <div class="panel-heading">{{ insatnce.recipe_name }}</div>
+                    <div class="panel-body">{{ insatnce.recipe_add }}</div>
+                    <div class="panel-body"><a href="{% url 'commentrecipe' recipeid=insatnce.pk %}">{{ insatnce.pk }}</a>
+                    </div>
+                    <div class=" pull-right">Continue Reading</div>
+                </div>
+            <br><br>
+        {% endfor %}
+
+            </div>
+
+    {% endif %}
+{% endblock %}
